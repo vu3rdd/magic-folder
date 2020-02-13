@@ -11,3 +11,5 @@ graft static
 graft integration
 
 global-exclude *~ *.pyc
+include versioneer.py
+include src/magic_folder/_version.py

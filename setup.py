@@ -14,6 +14,9 @@ import os, subprocess, re
 
 basedir = os.path.dirname(os.path.abspath(__file__))
 
+# versioneer
+import versioneer
+
 # locate our version number
 
 def read_version_py(infname):
@@ -262,9 +265,8 @@ setup(name="magic_folder",
       author_email='tahoe-dev@tahoe-lafs.org',
       url='https://github.com/LeastAuthority/magic_folder/',
       license='GNU GPL', # see README.rst -- there is an alternative licence
-      cmdclass={"update_version": UpdateVersion,
-                "test": PleaseUseTox,
-                },
+      version=versioneer.get_version(),
+      cmdclass=versioneer.get_cmdclass(),
       package_dir={'':'src'},
       packages=find_packages('src') + ["twisted.plugins", "magic_folder.test.plugins"],
       classifiers=trove_classifiers,
