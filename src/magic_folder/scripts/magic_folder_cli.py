@@ -97,7 +97,7 @@ from allmydata.scripts.cli import (
     LnOptions,
     CreateAliasOptions,
 )
-from allmydata.client import (
+from allmydata.node import (
     read_config,
 )
 
